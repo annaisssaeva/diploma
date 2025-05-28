@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block title %}
+
+    login
+
+{% endblock %}
+
+{% block content %}
+<br>
+{% if current_user.is_authenticated %}
+<div align="middle">
+    <h1 class="txt1" align="middle" >Вы вошли в аккаунт</h1>
+    <a href="/logout" class="txt1" style="color:#235c4e">Выйти из аккаунта</a>
+    </div>
+    {% else %}
+    <h1 class="txt1" align="middle">Вы не вошли в аккаунт</h1>
+    {% endif %}
+
+
+
+    <div class="txtb" align="middle"> <strong>Войдите в аккаунт</strong></div>
+<br>
+    <form action="#" method="post" align="middle">
+      <label for="username" class="txt1">Имя: &nbsp; </label>
+      <input type="text" name="username" />
+        <br>
+        <br>
+      <label for="password" class="txt1">Пароль: &nbsp;  </label>
+      <input type="password" name="password" />
+        <input type="submit" hidden />
+      <!-- <button type="submit">Submit</button> -->
+    </form>
+<br>
+<div class="txt1" align="middle">(для отправки нажмите Enter)</div>
+
+<br>
+<br>
+<br>
+<div class="txt1" align="middle"> Или</div>
+
+<div align="middle">
+<a href="/register" class="txt1" style="color:#235c4e">Создайте аккаунт</a>
+</div>
+<br>
+<br>
+{% endblock %}

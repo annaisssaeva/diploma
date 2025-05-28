@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block title %}
+
+    main
+
+{% endblock %}
+
+{% block content %}
+
+<div class="txt1" align="middle">
+    Прогресс пользователя <strong>{{ username }}</strong>
+<br>
+    Ваша скорость печати случайных слов: <strong>{{ speed }}</strong>
+
+<br>
+     Сколько времени вы провели за выполнением заданий?
+</div>
+
+  <!--ID: {{id}} -->
+
+<div class="txt1">
+
+</div>
+
+<div class="txt1">
+    Всего: <strong>{{ time_all }} минут</strong>
+</div>
+<div class="txt1">
+    Упражнения с буквами: <strong>{{ time1 }} минут</strong>
+</div>
+<div class="txt1">
+    Упражнения со слогами: <strong>{{ time2 }}  минут</strong>
+</div>
+<div class="txt1">
+    Упражнения со словами: <strong> {{ time3 }}  минут</strong>
+</div>
+<div class="txt1">
+    Упражнения с предложениями: <strong> {{ time4 }} минут</strong>
+</div>
+<div class="txt1">
+    Случайные упражнения: <strong> {{ time5 }} минут</strong>
+</div>
+{% endblock %}

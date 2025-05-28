@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    main
+{% endblock %}
+
+{% block content %}
+    <div class="text-center mb-4">
+        <strong class="txt1">Упражнения по печати на клавиатуре</strong>
+    </div>
+
+    <div class="txt1">
+        На этом сайте вы можете попрактиковаться и улучшить свои навыки печати на компьютере.
+    </div>
+
+    {% if current_user.is_authenticated %}
+        <div class="text-center mb-4">
+            <h1 class="txt1">Вы вошли в аккаунт <strong>{{ username }}</strong></h1>
+            <a href="/exercise" class="txt1" style="color:#235c4e">К упражнениям &nbsp;</a>
+            <a href="/progress" class="txt1" style="color:#235c4e">&nbsp;Прогресс</a>
+            <br>
+            <a href="/logout" class="txt1" style="color:#235c4e">Выйти из аккаунта</a>
+        </div>
+    {% else %}
+        <div class="text-center mb-4">
+            <h1 class="txt1">Вы не вошли в аккаунт</h1>
+            <nav>
+                <a href="/login" class="txt1" style="color:#235c4e">Войти &nbsp;</a>
+                <a href="/register" class="txt1" style="color:#235c4e">&nbsp;Создать аккаунт</a>
+            </nav>
+        </div>
+    {% endif %}
+<br>
+
+    <div class="txt1">
+        <strong>Информация о сайте:</strong>
+    </div>
+
+    <div class="txt1">
+        Слушать:
+        <audio autoplay controls>
+            <source src="static/audio/main_instr.wav" type="audio/wav"/>
+        </audio>
+    </div>
+<br>
+<br>
+
+    <div class="txt1 mb-4">
+        У нас представлен набор упражнений, которые нацелены на улучшение скорости печати на клавиатуре.
+        <br><br>
+        Упражнения разделены на 4 группы: "буквы", где надо вводить по одной букве, "слоги", в которых
+        вводить надо слоги, "слова" и "предложения", где печатать надо слова и целые предложения соответственно. Рекомендуем выполнять упражнения по 10-15 минут в день — по 2-4 минуты на упражнение, так учиться наиболее эффективно. Вы всегда можете вернуться к предыдущему разделу или заглянуть в следующий.
+        <br><br>
+        Рекомендуем зарегистрироваться – для этого понадобится придумать только псевдоним и пароль, зато так вы сможете отслеживать, сколько времени провели за разными упражнениями. Это можно сделать в разделе «Вход».
+        <br><br>
+        Для наиболее эффективного запоминания способов печати, руки на клавиатуре стоит расположить особым образом, а уже из этих начальных позиций двигать пальцы на нужные клавиши клавиатуры. Вот как стоит расположить ваши пальцы:
+    </div>
+
+    <div class="txt1">
+        <div class="col-md-6">
+            <strong>Левая рука</strong><br>
+            указательный — а<br>
+            средний — в<br>
+            безымянный — ы<br>
+            мизинец — ф
+        </div>
+
+        <div class="col-md-6">
+            <strong>Правая рука</strong><br>
+            указательный — о<br>
+            средний — л<br>
+            безымянный — д<br>
+            мизинец — ж<br>
+        </div>
+    </div>
+<br>
+    <div class="txt1">
+        Картинка с расположением пальцев для наглядности:
+    </div>
+
+    <img src="static/images/scale_1200-5.jpeg" alt="Расположение пальцев" class="img-fluid mx-auto d-block">
+
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block title %}
+
+    sign_up
+
+{% endblock %}
+
+{% block content %}
+<br>
+    <div class="txtb" align="middle"> <strong>Регистрация</strong></div>
+<br>
+<h2 class="txt1">Придумайте своему аккаунту</h2>
+<br>
+    <form action="#" method="post" align="middle">
+      <label for="username" class="txt1">Имя: &nbsp;</label>
+      <input type="text" name="username" />
+        <br>
+        <br>
+      <label for="password" class="txt1">Пароль: &nbsp; </label>
+      <input type="password" name="password" />
+    <input type="submit" hidden />
+    </form>
+<br>
+<div class="txt1" align="middle">(для отправки нажмите Enter)</div>
+
+<br>
+<div class="txt1" align="middle"> Или, если у Вас уже есть аккаунт</div>
+<div align="middle">
+<a href="/login" class="txt1" style="color:#235c4e" >Войдите</a>
+    </div>
+{% endblock %}

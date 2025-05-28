@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+
+{% block head %}
+    <link href="https://fonts.googleapis.com/css2?family=Readkit&display=swap" rel="stylesheet">
+
+{% endblock %}
+
+{% block title %}
+    exercise
+{% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+     <div class="row">
+        <div class="col-md-4 col-lg-3" style="background-color: #00000;"> <!-- Левый блок с фоном -->
+            <div class="text-center"> <!-- Центрирование кнопок -->
+                <div class="button" style="margin-top: 30px; outline: .3em solid #184237;">
+                    <a href="/exercise" style="color:#062452; font-size: calc(1rem + 0.5vw);">буквы</a>
+                </div>
+                <br>
+                <div class="button" style="margin-top: 30px;">
+                    <a href="/exercise2" style="color:#184237; font-size: calc(1rem + 0.5vw);">слоги</a>
+                </div>
+                <br>
+                <div class="button" style="margin-top: 30px;">
+                    <a href="/exercise3" style="color:#062452; font-size: calc(1rem + 0.5vw);">слова</a>
+                </div>
+                <br>
+                <div class="button" style="margin-top: 30px;">
+                    <a href="/exercise4" style="color:#062452; font-size: calc(1rem + 0.5vw);">предложения</a>
+                </div>
+                <br>
+                <div class="button" style="margin-top: 30px;">
+                    <a href="/exercise5" style="color:#062452; font-size: calc(1rem + 0.5vw);">случайно</a>
+                </div>
+
+
+                <!-- Добавление изображения под кнопками -->
+
+            </div>
+        </div>
+
+        <div class="col-md-8 col-lg-9"> <!-- Правый блок -->
+            <div class="text-center">
+                {% if stim in '1234567890' %}
+                    <div class="txt1">Введите цифру
+                        <div style="color:#184237; font-size:60px">{{ stim }} </div>
+                    </div>
+                {% else %}
+                    <div class="txt1">Введите букву
+                        <div style="color:#184237; font-size:60px">{{ stim }} </div>
+                    </div>
+                {% endif %}
+                <br>
+
+                <form action="" method="POST">
+                    <p>
+                        <input type="text" name="exercise" style="text-align:center; color:#235c4e" class="form-control">
+                    </p>
+                </form>
+
+                {% if message %}
+                    <p class="txt1" style="color:#235c4e">{{ message }}</p>
+                {% endif %}
+
+                <br>
+                <div class="txt1">(для отправки нажмите Enter)</div>
+
+
+                <div class="image-container">
+                    <img src="{{ url_for('static', filename='images/scale_1200-5.jpeg') }}" width="550px" alt="Описание изображения">
+                </div>
+                <br><br>
+
+
+            </div> <!-- text-center -->
+        </div> <!-- col-md-8 -->
+    </div> <!-- row -->
+</div> <!-- container-fluid -->
+{% endblock %}
